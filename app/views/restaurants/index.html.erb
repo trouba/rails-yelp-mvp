@@ -1,0 +1,23 @@
+
+
+<div class="container text-center">
+  <h1>Restaurants</h1>
+  <%= link_to "Add restaurant", new_restaurant_path, class: "btn btn-success right"%>
+  <hr>
+</div>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant|%>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="restaurant">
+          <p class="avatar text-center"><%=restaurant.name[0]%></p>
+          <%=link_to restaurant.name, restaurant_path(restaurant)%>
+          <p class="category"><%= restaurant.category%></p>
+</div>
+      </div>
+      <%end%>
+    </div>
+
+  </div>
+
+</div>
